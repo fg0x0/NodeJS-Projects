@@ -1,0 +1,21 @@
+{
+  "name": "encrypted-chat-tutorial",
+  "version": "1.0.0",
+  "node": "8.1.4",
+  "license": "MIT",
+  "author": "patrick.triest@gmail.com",
+  "description": "End-to-end RSA-256 encrypted chat application.",
+  "main": "app.js",
+  "engines": {
+    "node": ">=7.6"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "compat": "^1.0.4",
+    "express": "^4.16.4",
+    "multer": "^1.4.1",
+    "socket.io": "^2.0.3"
+  }
+}
