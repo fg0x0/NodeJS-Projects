@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mongolian Secure Chat</title>
+    <meta name="description" content="A minimalist, open-source, end-to-end RSA-2048 encrypted chat application.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="vue-instance">
+      <div class="chat-container full-width" ref="chatContainer">
+        <div class="title-header">
+          
+         
+        </div>
+        <div class="message-list">
+          <div class="message full-width" v-for="message in messages">
+            <p>
+              <span v-bind:class="(message.sender == originPublicKey) ? 'green' : 'red'">{{ getKeySnippet(message.sender) }}</span>
+              > {{ message.text }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="info-container full-width">
+      <h1>Чатлах өрөө</h1>
+      <div class="room-select">
+        <input type="text" class="full-width" placeholder="Өрөөний тоо" id="room-input" v-model="pendingRoom" @keyup.enter="joinRoom()">
+        <input class="yellow-button full-width" type="submit" v-on:click="joinRoom()" value="JOIN">
+      </div>
+      <div class="divider"></div>
+      <div class="notification-list" ref="notificationContainer">
+        <h1>Мэдэгдэл</h1>
+        <div class="notification full-width" v-for="notification in notifications">
+          <div class="notification-timestamp">{{ notification.timestamp }}</div>
+          <div class="notification-message">{{ notification.message }}</div>
+        </div>
+      </div>
+      <div class="flex-fill"></div>
+      <div class="divider"></div>
+      <div class="keys full-width">
+        <h1>Түлхүүрнүүд</h1>
+        <h2>Бусдын нийтийн түлхүүр</h2>
+        <div class="key red" v-if="destinationPublicKey">
+          <h3>Таних үйл явц - {{ getKeySnippet(destinationPublicKey) }}</h3>
+          <p>{{ destinationPublicKey }}</p>
+        </div>
+        <h2 v-else>2 дахь хэрэглэгч өрөөнд нэгдэхийг хүлээж байна...</h2>
+        <div class="divider"></div>
+        <h2>Миний нийтийн түлхүүр</h2>
+        <div class="key green" v-if="originPublicKey">
+          <h3>Таних үйл явц - {{ getKeySnippet(originPublicKey) }}</h3>
+          <p>{{ originPublicKey }}</p>
+        </div>
+        <div class="keypair-loader full-width" v-else>
+          <div class="center-x loader"></div>
+          <h2 class="center-text">Үүсгэж байна...</h2>
+        </div>
+      </div>
+      </div>
+      <div class="bottom-bar full-width">
+        # <input class="message-input" type="text" placeholder="Чатлах хэсэг" v-model="draft" @keyup.enter="sendMessage()">
+
+
+        
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.slim.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.8.1/immutable.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/page.js"></script>
+    
+  </body>
+</html>
+
+
+
+
+<script>
+
+document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){
+return false;
+}
+
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'V'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){
+return false;
+}
+}
+</script>
+
+
