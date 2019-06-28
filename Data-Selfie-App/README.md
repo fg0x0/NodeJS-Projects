@@ -7,7 +7,7 @@
 
 In your terminal:
 ```sh
-npm init [ node_modules -г үүсгэж байна ]
+npm install -g node-modules [ node_modules -г үүсгэж байна ]
 ```
 
 ```sh
