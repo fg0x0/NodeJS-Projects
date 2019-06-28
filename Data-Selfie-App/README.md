@@ -1,14 +1,15 @@
 # Data Selfie App
-> Here I am is a little web application that allows you to submit an image of your self along with your geolocation. This app is a nice starting point for other self-tracking applications or just a standalone application to create a collection of "dataselfies" with some extra metadata.
 
-![](assets/cover.png)
+![](zurag/fg0ddd.png)
 
 
 ## Setup
 
 In your terminal:
-```npm init
+```sh
+npm init
 ```
+
 ```sh
 npm install
 ```
