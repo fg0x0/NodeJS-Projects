@@ -1,9 +1,9 @@
-# Data Selfie App
+# Data Selfie App 🧐
 
-![](zurag/fg0ddd.png)
+![](zurag/fg0ddd1.png)
 
 
-## Setup
+## Setup 🤔
 
 In your terminal:
 ```sh
@@ -22,15 +22,16 @@ or if in development: `npm run dev`
 
 Go to: `localhost:3030` to see the magic.
 
-## Features (coming soon)
+## Features (coming soon) 🤓 
 
 - [ ] HTTPS support
 - [ ] Authentication and login
 - [ ] querying other APIs (e.g. weather)
 
 
-## Gallery
+## Gallery 😍
 
-![send a photo!](assets/entry-page.png)
-![view your posts](assets/logs-page.png)
+![send a photo! xD](assets/fg0ddd2.png)
+![view your posts xD](assets/fg0ddd3.png)
+![log information xD](assets/fg0ddd4.png)
 
