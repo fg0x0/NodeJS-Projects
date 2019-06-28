@@ -7,16 +7,16 @@
 
 In your terminal:
 ```sh
-npm init
+npm init [ node_modules -г үүсгэж байна ]
 ```
 
 ```sh
-npm install
+npm install [ програмд хэрэгтэй сангуудыг татаж суулгана ]
 ```
 
 then start your server
 ```sh
-npm start
+npm start [ серверээ асааж байна ]
 ```
 or if in development: `npm run dev`
 
