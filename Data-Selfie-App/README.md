@@ -1,6 +1,6 @@
 # Data Selfie App 🧐
 
-![](zurag/fg0ddd1.png)
+![](assets/fg0ddd1.png)
 
 
 ## Setup 🤔
