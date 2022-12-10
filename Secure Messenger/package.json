@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "compat": "^1.0.4",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "multer": "^1.4.1",
     "socket.io": "^2.0.3"
   }
